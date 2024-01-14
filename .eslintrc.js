@@ -19,6 +19,7 @@ module.exports = {
   extends: ["next/core-web-vitals", "plugin:@typescript-eslint/recommended", "prettier"],
   rules: {
     curly: ["warn", "multi-line", "consistent"],
+    "no-explicit-any": "off",
     "no-bitwise": "warn",
     "no-console": "off",
     "no-param-reassign": "warn",
