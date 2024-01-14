@@ -16,9 +16,10 @@ module.exports = {
     },
   },
   plugins: ["@typescript-eslint"],
-  extends: ["next/core-web-vitals", "plugin:@typescript-eslint/recommended", "prettier"],
+  extends: ["next", "next/core-web-vitals", "plugin:@typescript-eslint/recommended", "prettier"],
   rules: {
     curly: ["warn", "multi-line", "consistent"],
+    "no-explicit-any": "off",
     "@typescript-eslint/no-explicit-any": ["off"],
     "no-bitwise": "warn",
     "no-console": "off",
