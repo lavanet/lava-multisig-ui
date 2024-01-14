@@ -137,8 +137,10 @@ const TransactionSigning = (props: TransactionSigningProps) => {
     try {
       setLoading((newLoading) => ({ ...newLoading, signing: true }));
 
+      let tempWindow = (window as any); // ok now
+
       const offlineSigner =
-        walletType === "Keplr" ? window.leap.getOfflineSignerOnlyAmino(chain.chainId) : ledgerSigner;
+        walletType === "Keplr" ? tempWindow.leap.getOfflineSignerOnlyAmino(chain.chainId) : ledgerSigner;
 
       const signerAddress = walletAccount?.bech32Address;
       assert(signerAddress, "Missing signer address");
