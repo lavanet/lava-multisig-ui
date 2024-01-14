@@ -137,7 +137,7 @@ const TransactionSigning = (props: TransactionSigningProps) => {
     try {
       setLoading((newLoading) => ({ ...newLoading, signing: true }));
 
-      let tempWindow = (window as any); // ok now
+      const tempWindow = (window as any); // ok now
 
       const offlineSigner =
         walletType === "Keplr" ? tempWindow.leap.getOfflineSignerOnlyAmino(chain.chainId) : ledgerSigner;
