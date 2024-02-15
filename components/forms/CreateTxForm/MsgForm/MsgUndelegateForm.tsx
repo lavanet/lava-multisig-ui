@@ -1,8 +1,9 @@
+import SelectValidator from "@/components/SelectValidator";
 import { MsgUndelegateEncodeObject } from "@cosmjs/stargate";
 import { useEffect, useState } from "react";
 import { MsgGetter } from "..";
 import { useChains } from "../../../../context/ChainsContext";
-import { macroCoinToMicroCoin } from "../../../../lib/coinHelpers";
+import { displayCoinToBaseCoin } from "../../../../lib/coinHelpers";
 import { checkAddress, exampleAddress, trimStringsObj } from "../../../../lib/displayHelpers";
 import { MsgCodecs, MsgTypeUrls } from "../../../../types/txMsg";
 import Input from "../../../inputs/Input";
@@ -50,12 +51,19 @@ const MsgUndelegateForm = ({
         return false;
       }
 
+      try {
+        displayCoinToBaseCoin({ denom: chain.displayDenom, amount }, chain.assets);
+      } catch (e: unknown) {
+        setAmountError(e instanceof Error ? e.message : "Could not set decimals");
+        return false;
+      }
+
       return true;
     };
 
     const microCoin = (() => {
       try {
-        return macroCoinToMicroCoin({ denom: chain.displayDenom, amount }, chain.assets);
+        return displayCoinToBaseCoin({ denom: chain.displayDenom, amount }, chain.assets);
       } catch {
         return { denom: chain.displayDenom, amount: "0" };
       }
@@ -87,6 +95,10 @@ const MsgUndelegateForm = ({
       </button>
       <h2>MsgUndelegate</h2>
       <div className="form-item">
+        <SelectValidator
+          validatorAddress={validatorAddress}
+          setValidatorAddress={setValidatorAddress}
+        />
         <Input
           label="Validator Address"
           name="validator-address"
