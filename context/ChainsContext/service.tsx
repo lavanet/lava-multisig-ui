@@ -102,15 +102,18 @@ export const getChain = (chains: ChainItems) => {
   if (!chainNameFromUrl && isChainInfoFilled(recentChain)) {
     return recentChain;
   }
-
   const urlChain = getChainFromUrl(chainNameFromUrl);
   const envfileChain = getChainFromEnvfile(chainNameFromUrl);
+  console.log(chainNameFromUrl,envfileChain.registryName, "cosmoshub",
+  chains)
   const storedChain = getChainFromStorage(
     chainNameFromUrl || envfileChain.registryName || "cosmoshub",
     chains,
   );
 
+  
   const chain = { ...storedChain, ...envfileChain, ...urlChain };
+  console.log("[Debug] chain", chain)
 
   return isChainInfoFilled(chain) ? chain : emptyChain;
 };

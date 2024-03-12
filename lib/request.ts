@@ -10,7 +10,7 @@ export const requestJson = async (
     body: body ? JSON.stringify(body) : null,
     ...restConfig,
   };
-
+  console.log("Sending fetch", endpoint, config)
   const response = await fetch(endpoint, config);
   return response.ok ? response.json() : Promise.reject(new Error(await response.text()));
 };

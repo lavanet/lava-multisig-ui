@@ -37,7 +37,7 @@ const createMultisigFromCompressedSecp256k1Pubkeys = async (
   });
   const multisigPubkey = createMultisigThresholdPubkey(pubkeys, threshold);
   const multisigAddress = pubkeyToAddress(multisigPubkey, addressPrefix);
-
+  
   // save multisig to relational offchain database
   const multisig = {
     address: multisigAddress,
