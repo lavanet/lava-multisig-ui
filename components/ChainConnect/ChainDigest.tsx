@@ -27,12 +27,12 @@ export default function ChainDigest({ chain, simplify }: ChainItemProps) {
                 position: "absolute",
                 top: "-6px",
                 left: "-6px",
-                border: "2px solid rgb(134 239 172 / var(--tw-bg-opacity))",
+                border: "2px solid rgb(6 57 112 / var(--tw-bg-opacity))",
                 borderRadius: "50%",
                 width: "20px",
                 height: "20px",
-                background: "rgb(134 239 172 / var(--tw-bg-opacity))",
-                color: "rgb(20 83 45 / var(--tw-text-opacity))",
+                background: "rgb(6 57 112 / var(--tw-bg-opacity))",
+                color: "rgb(6 57 112 / var(--tw-text-opacity))",
               }}
             />
           ) : null}

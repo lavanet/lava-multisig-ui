@@ -68,7 +68,7 @@ const Page = ({ title, goBack, children }: PageProps) => {
       <div className="footer-links">
         <StackableContainer base lessPadding lessMargin>
           <p>
-            <a href="https://github.com/cosmos/cosmos-multisig-ui">View on GitHub</a>
+            <a href="https://github.com/lavanet/lava-multisig-ui">View on GitHub</a>
           </p>
         </StackableContainer>
       </div>
@@ -104,7 +104,7 @@ const Page = ({ title, goBack, children }: PageProps) => {
             sans-serif;
           color: white;
           min-height: 100vh;
-          background: linear-gradient(240.16deg, #3f023c 10.46%, #561253 54.88%, #580a55 94.89%);
+          background: linear-gradient(240.16deg, #031d38 10.46%, #04284e 54.88%, #063970 94.89%);
           font-size: 16px;
           margin: 0;
         }

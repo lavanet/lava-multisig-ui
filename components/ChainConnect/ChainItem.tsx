@@ -41,12 +41,12 @@ export default function ChainItem({ chain, hoverCardElementBoundary }: ChainItem
                 position: "absolute",
                 top: "-6px",
                 left: "-6px",
-                border: "2px solid rgb(134 239 172 / var(--tw-bg-opacity))",
+                border: "2px solid rgb(6 57 112 / var(--tw-bg-opacity))",
                 borderRadius: "50%",
                 width: "25px",
                 height: "25px",
-                background: "rgb(134 239 172 / var(--tw-bg-opacity))",
-                color: "rgb(20 83 45 / var(--tw-text-opacity))",
+                background: "rgb(6 57 112 / var(--tw-bg-opacity))",
+                color: "rgb(6 57 112 / var(--tw-text-opacity))",
               }}
             />
           ) : null}
@@ -62,7 +62,7 @@ export default function ChainItem({ chain, hoverCardElementBoundary }: ChainItem
         </CommandItem>
       </HoverCardTrigger>
       <HoverCardContent
-        className="w-auto  bg-fuchsia-900"
+        className="w-auto  bg-blue-600"
         collisionBoundary={hoverCardElementBoundary}
       >
         <ChainDigest chain={chain} />

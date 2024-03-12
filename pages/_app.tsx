@@ -13,7 +13,7 @@ export default function MultisigApp({ Component, pageProps }: AppProps) {
       <ThemeProvider attribute="class" defaultTheme="dark" enableSystem>
         <TooltipProvider>
           <Header />
-          <MigrationWarning />
+          {/* <MigrationWarning /> */}
           <Component {...pageProps} />
           <Toaster />
         </TooltipProvider>

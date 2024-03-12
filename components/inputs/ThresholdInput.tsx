@@ -32,7 +32,7 @@ const ThresholdInput = (props: Props) => (
         font-size: 24px;
       }
       input {
-        background: #722d6f;
+        background: #063970;
         border: 2px solid #ffffff;
         box-sizing: border-box;
         border-radius: 9px;

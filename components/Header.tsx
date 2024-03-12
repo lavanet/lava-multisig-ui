@@ -9,7 +9,7 @@ export default function Header() {
   const { chain } = useChains();
 
   return (
-    <header className="flex flex-row items-center justify-between gap-4 bg-fuchsia-900 px-3">
+    <header className="flex flex-row items-center justify-between gap-4 bg-blue-600 px-3">
       <ChainConnect />
       <Link
         href={
