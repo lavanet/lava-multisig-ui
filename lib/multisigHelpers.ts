@@ -83,6 +83,7 @@ const getMultisigAccount = async (
   const chainId = await client.getChainId();
 
   let pubkey: MultisigThresholdPubkey;
+  console.log("TESTT", accountOnChain)
   if (accountOnChain?.pubkey) {
     assert(
       isMultisigThresholdPubkey(accountOnChain.pubkey),
@@ -104,3 +105,4 @@ const getMultisigAccount = async (
 };
 
 export { createMultisigFromCompressedSecp256k1Pubkeys, getMultisigAccount };
+

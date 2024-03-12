@@ -76,6 +76,11 @@ export default function AccountView() {
           ) : (
             <div className="flex w-full flex-col gap-4">
               <ButtonConnectWallet
+                walletType="Add Lava To Keplr"
+                walletInfoState={walletInfoState}
+                setError={setError}
+              />
+              <ButtonConnectWallet
                 walletType="Keplr"
                 walletInfoState={walletInfoState}
                 setError={setError}

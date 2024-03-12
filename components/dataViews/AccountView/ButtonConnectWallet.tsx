@@ -50,6 +50,80 @@ export default function ButtonConnectWallet({
       setLoading((newLoading) => ({ ...newLoading, keplr: false }));
     }
   }, [chain.chainId, setError, setWalletInfo]);
+  
+  const addLavaToKeplr = useCallback(async () => {
+    try {
+      setError("");
+      setLoading((oldLoading) => ({ ...oldLoading, keplr: true }));
+
+      
+      await window.keplr.experimentalSuggestChain(
+        {
+          "chainId": "lava-testnet-2",
+          "chainName": "Lava",
+          "rpc": "https://public-rpc.lavanet.xyz:443",
+          "rest": "https://rest-public-rpc.lavanet.xyz:443",
+          "bip44": {
+            "coinType": 118
+          },
+          "bech32Config": {
+            "bech32PrefixAccAddr": "lava@",
+            "bech32PrefixAccPub": "lava@pub",
+            "bech32PrefixValAddr": "lava@valoper",
+            "bech32PrefixValPub": "lava@valoperpub",
+            "bech32PrefixConsAddr": "lava@valcons",
+            "bech32PrefixConsPub": "lava@valconspub"
+          },
+          "currencies": [
+            {
+              "coinDenom": "LAVA",
+              "coinMinimalDenom": "ulava",
+              "coinDecimals": 6,
+              "coinGeckoId": "unknown"
+            }
+          ],
+          "feeCurrencies": [
+            {
+              "coinDenom": "LAVA",
+              "coinMinimalDenom": "ulava",
+              "coinDecimals": 6,
+              "coinGeckoId": "unknown",
+              "gasPriceStep": {
+                "low": 0,
+                "average": 0.025,
+                "high": 0.03
+              }
+            }
+          ],
+          "stakeCurrency": {
+            "coinDenom": "LAVA",
+            "coinMinimalDenom": "ulava",
+            "coinDecimals": 6,
+            "coinGeckoId": "unknown"
+          },
+          "features": [],
+          "beta": true
+        }
+
+      )
+      // await window.keplr.enable(chain.chainId);
+      // window.keplr.defaultOptions = {
+      //   sign: { preferNoSetFee: true, preferNoSetMemo: true, disableBalanceCheck: true },
+      // };
+
+      // const { bech32Address: address, pubKey: pubKeyArray } = await window.keplr.getKey(
+      //   chain.chainId,
+      // );
+      // const pubKey = toBase64(pubKeyArray);
+
+      // setWalletInfo({ type: "Keplr", address, pubKey });
+    } catch (e) {
+      console.error(e);
+      setError(getConnectError(e));
+    } finally {
+      setLoading((newLoading) => ({ ...newLoading, keplr: false }));
+    }
+  }, [chain.chainId, setError, setWalletInfo]);
 
   useLayoutEffect(() => {
     if (!walletInfo?.address) {
@@ -60,10 +134,12 @@ export default function ButtonConnectWallet({
 
     if (walletInfo.type === "Keplr") {
       window.addEventListener(accountChangeKey, connectKeplr);
+    } else if (walletInfo.type === "Add Lava To Keplr") {
+      window.addEventListener(accountChangeKey, addLavaToKeplr);
     } else {
       window.removeEventListener(accountChangeKey, connectKeplr);
     }
-  }, [connectKeplr, walletInfo]);
+  }, [connectKeplr, walletInfo, addLavaToKeplr]);
 
   const connectLedger = async () => {
     try {
@@ -93,6 +169,10 @@ export default function ButtonConnectWallet({
       return connectKeplr;
     }
 
+    if (walletType === "Add Lava To Keplr") {
+      return addLavaToKeplr;
+    }
+
     if (walletType === "Ledger") {
       return connectLedger;
     }
@@ -108,15 +188,23 @@ export default function ButtonConnectWallet({
       {isLoading ? (
         <Loader2 className="mr-2 h-5 w-5 animate-spin" />
       ) : (
-        <Image
-          alt=""
-          src={`/assets/icons/${walletType.toLowerCase()}.svg`}
-          width={20}
-          height={20}
-          className="mr-2"
-        />
+        <>
+          <Image
+            alt=""
+            src={`/assets/icons/${walletType.toLowerCase()}.svg`}
+            width={20}
+            height={20}
+            className="mr-2"
+          />
+          {walletType === "Add Lava To Keplr" ? (
+            walletType
+          ) : (
+            <>
+              Connect {walletType}
+            </>
+          )}
+        </>
       )}
-      Connect {walletType}
     </Button>
   );
 }

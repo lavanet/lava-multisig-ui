@@ -111,6 +111,7 @@ const MultiSigForm = (props: Props) => {
       );
       props.router.push(`/${chain.registryName}/${multisigAddress}`);
     } catch (error) {
+      setProcessing(false);
       console.log("Failed to creat multisig: ", error);
     }
   };

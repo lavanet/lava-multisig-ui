@@ -10,6 +10,7 @@ declare global {
       // eslint-disable-next-line @typescript-eslint/no-explicit-any
       enable: (chainId: string) => any;
       getKey: (chainId: string) => Promise<WalletAccount>;
+      experimentalSuggestChain: (input: any) => Promise<any>;
     };
     // eslint-disable-next-line @typescript-eslint/no-explicit-any
     getOfflineSignerOnlyAmino: any;
