@@ -75,11 +75,11 @@ export const ChainsProvider = ({ children }: ChainsProviderProps) => {
     setChainsError(dispatch, chainItemsError);
 
     const loadedChain = getChain(chainItems);
-
+    console.log(chainItems.testnets)
     if (chainItems.mainnets.size && loadedChain === emptyChain) {
-      setChain(dispatch, chainItems.mainnets.get("cosmoshub") ?? emptyChain);
+      setChain(dispatch, chainItems.testnets.get("lavatestnet2") ?? emptyChain);
     } else {
-      setChain(dispatch, loadedChain);
+      setChain(dispatch, chainItems.testnets.get("lavatestnet2") ?? loadedChain);
     }
   }, [chainItems, chainItemsError]);
 
