@@ -13,7 +13,7 @@ export function ChainHeader() {
         <AvatarImage src={chain.logo} alt={`${chain.chainDisplayName} logo`} />
         <AvatarFallback>{chain.registryName.slice(0, 1).toUpperCase()}</AvatarFallback>
       </Avatar>
-      <h1>{chain.chainDisplayName} Multisig</h1>
+      <h1>{chain.chainDisplayName} Multisig Dapp</h1>
     </>
   ) : (
     <>

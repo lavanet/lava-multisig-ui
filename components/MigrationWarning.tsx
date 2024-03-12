@@ -2,7 +2,7 @@ import { Alert, AlertDescription, AlertTitle } from "@/components/ui/alert";
 
 export default function MigrationWarning() {
   return (
-    <Alert className="mx-auto my-4 max-w-md border-yellow-300 bg-blue-600">
+    <Alert className="mx-auto my-4 max-w-md border-yellow-300 bg-blue-900">
       <AlertTitle>Warning!</AlertTitle>
       <AlertDescription className="mt-3">
         This app will no longer be available at this URL from March 1st, 2024.

@@ -62,7 +62,7 @@ export default function ChainItem({ chain, hoverCardElementBoundary }: ChainItem
         </CommandItem>
       </HoverCardTrigger>
       <HoverCardContent
-        className="w-auto  bg-blue-600"
+        className="w-auto  bg-blue-900"
         collisionBoundary={hoverCardElementBoundary}
       >
         <ChainDigest chain={chain} />

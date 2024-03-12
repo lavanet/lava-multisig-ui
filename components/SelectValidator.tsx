@@ -36,7 +36,7 @@ export default function SelectValidator({
           variant="outline"
           role="combobox"
           aria-expanded={open}
-          className="mb-4 w-full max-w-[300px] justify-between border-white bg-blue-600 hover:bg-blue-600"
+          className="mb-4 w-full max-w-[300px] justify-between border-white bg-blue-900 hover:bg-blue-900"
         >
           {validatorAddress
             ? validators?.find(
@@ -47,7 +47,7 @@ export default function SelectValidator({
         </Button>
       </PopoverTrigger>
       <PopoverContent className="p-0">
-        <Command className="bg-blue-600">
+        <Command className="bg-blue-900">
           <CommandInput
             placeholder="Search validator…"
             value={searchText}
