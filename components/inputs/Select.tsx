@@ -31,7 +31,7 @@ const StyledSelect = (props: any) => {
       ...provided,
       zIndex: 10,
       borderRadius: "10px",
-      background: "#063970",
+      background: "#0C121A",
     }),
     singleValue: (provided: CSSProperties) => ({
       ...provided,

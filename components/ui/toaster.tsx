@@ -15,7 +15,7 @@ export function Toaster() {
     <ToastProvider >
       {toasts.map(function ({ id, title, description, action, ...props }) {
         return (
-          <Toast key={id} {...props} className="bg-blue-900" style={
+          <Toast key={id} {...props} className="bg-orange-600" style={
             {
               "--accent": "0, 100%, 100%",
               "--border": "0, 100%, 100%",

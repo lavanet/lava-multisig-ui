@@ -25,7 +25,7 @@ export default function ChainConnect() {
     >
       <DialogButton />
       <DialogContent
-        className={"max-h-[75%] max-w-[75%] overflow-y-auto bg-blue-900"}
+        className={"max-h-[75%] max-w-[75%] overflow-y-auto bg-orange-600"}
         style={newConnection.action === "confirm" ? { width: "auto" } : {}}
       >
         {newConnection.action === "confirm" ? (

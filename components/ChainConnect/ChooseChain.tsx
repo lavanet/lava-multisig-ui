@@ -16,7 +16,7 @@ export default function ChooseChain() {
 
   return (
     <Command
-      className="bg-blue-900 text-white"
+      className="bg-orange-600 text-white"
       style={
         {
           "--accent": "0, 100%, 100%",
