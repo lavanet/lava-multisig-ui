@@ -31,7 +31,7 @@ As your instance of the app is used, you can return to the DGraph dashboard to v
 
 ### 4. Successful Deployment
 
-Redeploy the app and it will pickup the new environment variables and should be functioning normally.
+Redeploy the app and it will pick up the new environment variables and should be functioning normally.
 
 ## Running Locally
 
