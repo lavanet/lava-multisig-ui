@@ -115,7 +115,7 @@ function examplePubkey(index: number): string {
 
 /**
  * Returns an error message for invalid addresses.
- * Returns null of there is no error.
+ * Returns null if there is no error.
  *
  * If `chainAddressPrefix` is null, the prefix check will be skipped.
  */
