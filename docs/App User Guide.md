@@ -36,7 +36,7 @@ You may want to [Create a Transaction](#creating-a-transaction) next.
 On the multisig account page, click "Create Transaction". 
 
 ![Screen Shot 2021-09-05 at 1 16 56 PM](https://user-images.githubusercontent.com/6718506/132136739-c43eeaeb-15fd-48d3-afa2-8e630740cf82.png)
-Enter in the to address, the amount and optionally a memo. The gas limit is adjustable, but you probably do not want to change it, as the gas fees are set automatically by the app. Once all the necessary fields are filled in, click "Create Transaction". 
+Enter the address, the amount and optionally a memo. The gas limit is adjustable, but you probably do not want to change it, as the gas fees are set automatically by the app. Once all the necessary fields are filled in, click "Create Transaction". 
 ![Screen Shot 2021-09-05 at 1 19 30 PM](https://user-images.githubusercontent.com/6718506/132136750-d2e91252-fa4d-4f56-9d80-8460c85deec4.png)
 
 You may want to [Sign a Transaction](#signing-a-transaction) next.
