@@ -36,7 +36,7 @@ const createMultisig = async (multisig: DbAccount) => {
  *
  * Keep the format in sync with `GetMultisigAccountResponse` because
  * we return the full object in the API. Right now address and chainId
- * are somewhat unnecessary to query but still nice for debgging.
+ * are somewhat unnecessary to query but still nice for debugging.
  */
 interface MultisigFromQuery {
   address: string;

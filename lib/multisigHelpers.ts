@@ -62,7 +62,7 @@ interface GetMultisigAccountResponse {
  * a node and/or the api if the multisig was made on this app.
  *
  * The public key should always be available, either on chain or in the app's database.
- * The account is only available when the there was any on-chain activity such as
+ * The account is only available when there was any on-chain activity such as
  * receipt of tokens.
  */
 const getMultisigAccount = async (
